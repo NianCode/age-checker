@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=DotGothic16&family=Major+Mono+Display&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap');
+        /* 'Noto Sans JP', sans-serif; */
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #fundo{
+            height: 0px;
+        }
+        body{
+            background-color: rgb(20, 5, 44);
+        }
+        #areaborda{
+            border: 1px solid rgb(255, 228, 251);
+            box-shadow: 
+                inset 0px 0px 10px rgb(255, 151, 229),
+                0px 0px 10px rgb(255, 151, 229),
+                inset 0px 0px 25px rgb(255, 69, 209),
+                0px 0px 25px rgb(255, 69, 209),
+                inset 0px 0px 100px rgb(255, 19, 129),
+                0px 0px 100px rgb(255, 19, 129);
+            height: 700px;
+            margin: 0;
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .area{
+            height: 500px;
+            font-family: "DotGothic16", serif;
+            font-size: 20pt;
+            margin-right: auto;
+            margin-left: auto;
+	        background-color: #c0c0c0;
+	        border-left: 3px solid #eee;
+	        border-top: 3px solid #eee;
+	        border-right: 3px solid #444;
+	        border-bottom: 3px solid #444;
+            padding: 0px;
+            z-index: 1;
+        }
+        #barraconteudo{
+            color: white;
+            font-family: arial;
+            text-shadow: 1px 1px 0px rgb(58, 58, 58);
+            box-shadow: 0px 1px #444;
+            text-shadow: 1px 1px 0px rgb(58, 58, 58);
+            background-image: -webkit-linear-gradient(10deg, aqua, rgb(175, 77, 255), rgb(228, 95, 255));
+            height: 40px;
+            user-select: none;
+            margin: 0;
+            padding-right: 0;
+            padding: 0px;
+        }
+        #botaobarra{
+            text-align: center;
+            color: black;
+            font-size: 15pt;
+            font-family: "DotGothic16", serif;
+		    line-height: 1;
+            padding: 0;
+		    background-color: #c0c0c0;
+		    border-left: 3px solid #eee;
+		    border-top: 3px solid #eee;
+		    border-right: 3px solid #444;
+		    border-bottom: 3px solid #444;
+            cursor: pointer;
+            margin-right: 7px; 
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        #botaobarraX{
+            width: 30px;
+            text-align: center;
+            color: black;
+            font-size: 15pt;
+            font-family: "DotGothic16", serif;
+		    line-height: 1;
+		    background-color: #c0c0c0;
+		    border-left: 3px solid #eee;
+		    border-top: 3px solid #eee;
+		    border-right: 3px solid #444;
+		    border-bottom: 3px solid #444;
+            cursor: pointer;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            padding: 0;
+        }
+        #botoes{
+            padding: 0;
+            margin: 0;
+            right: 7px;
+        }
+        #lateraldireita{
+            position: relative;;
+            font-family: 'Noto Sans JP';
+            width: 0px;
+            font-size: 100pt;
+            text-align: center;
+            color: rgb(255, 255, 255);
+            text-shadow: 2px 2px 0px rgb(52, 255, 255),
+            4px 4px 0px rgb(52, 231, 255),
+            6px 6px 0px rgb(52, 211, 255),
+            8px 8px 0px rgb(52, 191, 255),
+            10px 10px 0px rgb(52, 171, 255),
+            12px 12px 0px rgb(52, 151, 255),
+            14px 14px 0px rgb(52, 131, 255),
+            16px 16px 0px rgb(52, 111, 255),
+            0px 0px 100px rgb(255, 255, 255),
+            0px 0px 200px rgb(0, 174, 255),
+            0px 0px 300px rgb(0, 174, 255),
+            0px 0px 400px rgb(0, 174, 255);
+            user-select: none;
+            margin-bottom: 100px;
+            padding: 0;
+            bottom: 75px;
+            left: 120px;
+        }
+        #titulo{
+            top: 30px;
+            font-family: 'Noto Sans JP';
+            font-size: 100pt;
+            font-weight: 100;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            color: rgb(255, 255, 255);
+            text-shadow: 2px 2px 0px rgb(120, 118, 255),
+            4px 4px 0px rgb(114, 81, 255),
+            6px 6px 0px rgb(144, 81, 255),
+            8px 8px 0px rgb(174, 81, 255),
+            10px 10px 0px rgb(208, 81, 255),
+            12px 12px 0px rgb(238, 81, 255),
+            14px 14px 0px rgb(255, 81, 235),
+            16px 16px 0px rgb(255, 81, 205),
+            0px 0px 100px rgb(255, 255, 255),
+            0px 0px 200px rgb(255, 0, 234),
+            0px 0px 300px rgb(255, 0, 234),
+            0px 0px 400px rgb(255, 0, 234);
+            user-select: none;
+            z-index: 1;
+        }
+        #estatua{
+            right: 150px;
+            bottom: 1000px;
+            position: relative;
+            z-index: 2;
+            max-height: 550px;
+            user-select: none;
+        }
+        #perguntas{
+            padding-top: 15px;
+        }
+        #txtano{
+            width: 80px;
+            color: black;
+            font-size: 15pt;
+            font-family: "DotGothic16", serif;
+		    line-height: 1;
+		    background-color: #c0c0c0;
+		    border-left: 3px solid #eee;
+		    border-top: 3px solid #eee;
+		    border-right: 3px solid #444;
+		    border-bottom: 3px solid #444;
+            cursor: pointer;
+            padding: 5px;
+        }
+        #enviar{
+            text-align: center;
+            color: black;
+            font-size: 15pt;
+            font-family: "DotGothic16", serif;
+		    line-height: 1;
+		    background-color: #c0c0c0;
+		    border-left: 3px solid #eee;
+		    border-top: 3px solid #eee;
+		    border-right: 3px solid #444;
+		    border-bottom: 3px solid #444;
+            cursor: pointer;
+            padding: 10px;
+        }
+        #enviar:hover{
+            background: #9c9c9c;
+            color: white;
+        }
+        #enviar:active{
+            background: rgb(88, 88, 88);
+            color: black;
+        }
+        .anoesexo{
+            text-align: center;
+            margin: 0px;
+        }
+        .sexo{
+            cursor: pointer;
+        }
+        #imgresbox{
+            height: 260px;
+        }
+        #foto{
+            height: 200px;
+            width: 200px;
+        }
+        @media (max-width: 580px){
+            #areaborda{
+                height: 500px;
+            }
+            #titulo{
+                top: 0px;
+            }
+        }
+        @media (max-width: 768px){
+            #titulo{
+                font-size: 72pt;
+            }
+            #estatua{
+                display: none;
+                visibility: collapse;
+            }
+        }
+        @media (max-width: 1680px){
+            #lateraldireita{
+                left: 50px;
+            }
+        }
+        @media (max-width: 1506px){
+            #lateraldireita{
+                display: none;
+                visibility: collapse;
+            }
+            #estatua{
+                max-height: 300px;
+                right: 50px;
+                bottom: 900px;
+            }
+        }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+        <div id="titulo" class="col-sm-12">アマンダ</div>
+        <div id="fundo" class="row">
+            <div id="areaborda" class="col-sm-12">
+                    <div class="row">
+                            <div class="col-sm-10 area">
+                                <div id="barraconteudo" class="col-sm-12 row justify-content-between">
+                                    <div id="tituloconteudo" class="col-5">
+                                        Age Checker
+                                    </div>
+                                    <div id="botoes"class="col-5 row justify-content-end">
+                                        <span class="col-1" id="botaobarra">-</span>
+                                        <span class="col-1" id="botaobarraX">X</span>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                <div  class="anoesexo" id="perguntas">
+                                <p class="anoesexo">
+                                    Ano de nascimento:
+                                    <input type="number" id="txtano" placeholder="2022">
+                                </p>
+                                <p class="anoesexo">
+                                    Sexo:
+                                    <input type="radio" name="sexo" id="mas" class="sexo" checked>
+                                    <label for="mas">Masculino</label>
+                                    <input type="radio" name="sexo" id="fem" class="sexo">
+                                    <label for="fem">Feminino</label>
+                                </p>
+                                </div>
+                                </div>
+                                <div class="row justify-content-center">     
+                                        <input type="button" value="Enviar" id="enviar" onclick="verificar()">
+                                </div>
+                                <div id="res" class="row justify-content-center">
+                                    Preencha os dados acima!
+                                </div>
+                                <div class="row justify-content-center align-items-center rounded-circle" id="imgresbox">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <div id="lateraldireita" class="float-right">ニコラス</div>
+                <img src="estatua.png" id="estatua" class="col-0">
+            </div>
+        </div>
+    </div>
+    <!-- JavaScript (Opcional) -->
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script>
+        const images = document.querySelectorAll("#estatua");
+        const range = 10;
+        const calcValue = (a, b) => (a/b*range-range/2).toFixed(1)
+        let timeout;
+        document.addEventListener('mousemove', ({x, y}) => {const yValue = calcValue(y, window.innerHeight);const xValue = calcValue(x, window.innerWidth);[].forEach.call(images, (image) => {image.style.transform = `translateX(${-xValue}px) translateY(${yValue}px)`;});}, false);
+
+        function verificar(){
+            var anocolocado = document.getElementById('txtano')
+            var data = new Date
+            var ano = data.getFullYear()
+            var res = document.getElementById('res')
+            if(anocolocado.value.length == 0 || Number(anocolocado.value) > ano){
+                res.innerHTML = "[ERRO] Coloque um ano valido!"
+            } else{
+                var sexo = document.getElementsByName('sexo')
+                var idade = ano - Number(anocolocado.value)
+                var genero = ''
+                var img = document.createElement('img')
+                var a = ''
+                img.setAttribute('id', 'foto')
+            if(sexo[0].checked){
+                genero = 'Um homem'
+                if(idade >= 0 && idade < 12){
+                    a = 'criança'
+                    img.setAttribute('src', 'foto-bebe-m.png')
+                }else if(idade < 18){
+                    a = 'jovem'
+                    img.setAttribute('src', 'foto-jovem-m.png')
+                }else if(idade <50){
+                    a = 'adulto'
+                    img.setAttribute('src', 'foto-adulto-m.png')
+                }else{
+                    a = 'idoso'
+                    img.setAttribute('src', 'foto-idoso-m.png')
+                }
+            }else if(sexo[1].checked){
+                genero = 'Uma mulher'
+                if(idade >= 0 && idade < 12){
+                    a = 'criança'
+                    img.setAttribute('src', 'foto-bebe-f.png')
+                }else if(idade < 18){
+                    a = 'jovem'
+                    img.setAttribute('src', 'foto-jovem-f.png')
+                }else if(idade <50){
+                    a = 'adulto'
+                    img.setAttribute('src', 'foto-adulto-f.png')
+                }else{
+                    a = 'idoso'
+                    img.setAttribute('src', 'foto-idoso-f.png')
+                }
+            }
+                res.innerHTML = `${genero}(${a}) de ${idade} anos`
+                document.getElementById('imgresbox').innerHTML = ''
+                document.getElementById('imgresbox').appendChild(img)
+        }
+    }
+    </script>
+
+  </body>
+</html>
